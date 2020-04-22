@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Event</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>la valeur est : {{ valeur }}</p>
+      <input type="text" placeholder="saisie" v-model="valeur"/><br/>
+      <template v-for="abo in abos">
+        <input type="radio" :value="abo.value" v-model="valeur"/>
+        <label :for="abo.value">{{ abo.sentences }}</label><br/>
+      </template>
+      <select name="nationalité" v-model="valeur">
+        <option disabled="disabled" value="">Choisissez</option>
+        <option :value="info.value" v-for="info in infos">{{info.intitule}}</option>
+      </select>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
