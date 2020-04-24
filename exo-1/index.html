@@ -3,13 +3,19 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Event</title>
+    <title>Liaisons sur les champs de formulaire</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
     <div id="app">
       <p>la valeur est : {{ valeur }}</p>
-      <input type="text" placeholder="saisie" v-model="valeur"/><br/>
+      <p>les noms cochés sont : {{ namesCheck }}</p>
+      <input type="text" placeholder="saisie" v-model="valeur"/>
+      <input type="text" placeholder="saisie" v-model="namesCheck"/><br/>
+      <template v-for="info in infos">
+        <input type="checkbox" :value="info.value" v-model="namesCheck"/>
+        <label :for="info">{{ info.intitule }}</label>
+      </template><br/>
       <template v-for="abo in abos">
         <input type="radio" :value="abo.value" v-model="valeur"/>
         <label :for="abo.value">{{ abo.sentences }}</label><br/>

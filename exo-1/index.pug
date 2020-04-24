@@ -3,13 +3,20 @@ html(lang="fr")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Event
+    title Liaisons sur les champs de formulaire
     script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
   body
     #app
       p la valeur est : {{ valeur }}
+      p les noms cochés sont : {{ namesCheck }}
 
       input(type="text", placeholder="saisie" v-model="valeur")
+      input(type="text", placeholder="saisie" v-model="namesCheck")
+      br
+
+      template(v-for="info in infos")
+        input(type="checkbox", :value="info.value" v-model="namesCheck")
+        label(:for="info") {{ info.intitule }}
 
       br
 

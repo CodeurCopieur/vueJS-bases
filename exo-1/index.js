@@ -2,6 +2,7 @@ let app = new Vue({
   el: "#app",
   data: {
     valeur: '',
+    namesCheck: [],
     Names: [],
     infos: [{
       value: "FR",
