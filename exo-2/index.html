@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Quelques personnages de Game of Thrones</title>
+  </head>
+  <body>
+    <div id="app">
+      <p> le nom est  {{ valeur }}</p>
+      <select name="personnage" v-model="valeur">
+        <option disabled="disabled" value="">Choisissez</option>
+        <template v-for="perso in persos">
+          <option :value="perso.list">{{ perso.nom }}</option>
+        </template>
+      </select>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
