@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css")
+    link(rel="stylesheet", href="index.css")
+    title Découverte
+  body
+    .ui.inverted.fixed.menu
+      .header.item Decouverte
+    
+    .ui.main.container#app
+      a(:href="link + '/cv.html'", target='_blank', :title='message') {{ message }}
+
+      p (v-if) si 'success' est true la div est afficher sinon l'élément est supprimé (v-if="success") || (v-else="!success")
+      p (v-show) si 'success' est true la div est afficher sinon l'élément est est display:none
+
+      //ou on envoyer un objet {success: success, error: !success}
+      .ui.message(:class="success ? 'success' : 'error' ", :style="style()")
+        i.icon.close(@click='close')
+        p ou un objet :class="{success: success, error: !success}"
+
+      h3 liste de techno
+      p(v-for="(nom, i) in noms") {{ i+1 }} - {{ nom }}
+
+      input(type="text" v-model='message')
+      br
+      br
+      
+      input(type="checkbox" v-model='success')
+      label(for="")  {{ success }}
+      p comme si c'était un v-if
+
+      .ui.message(:class="cls")
+        i.icon.close(@click='close')
+        p Hello
+
+      input(type="checkbox" v-model='cls' :true-value="'success'" :false-value="'error'")
+      label(for="")  {{ success }}
+
+
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    script(src="index.js")
