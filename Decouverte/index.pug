@@ -4,13 +4,16 @@ html(lang="fr")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css")
-    link(rel="stylesheet", href="index.css")
+    link(rel="stylesheet", href="../index.css")
     title Découverte
   body
     .ui.inverted.fixed.menu
       .header.item Decouverte
     
     .ui.main.container#app
+
+      h3 Exo 1
+
       a(:href="link + '/cv.html'", target='_blank', :title='message') {{ message }}
 
       p (v-if) si 'success' est true la div est afficher sinon l'élément est supprimé (v-if="success") || (v-else="!success")
@@ -20,6 +23,8 @@ html(lang="fr")
       .ui.message(:class="success ? 'success' : 'error' ", :style="style()")
         i.icon.close(@click='close')
         p ou un objet :class="{success: success, error: !success}"
+
+      h3 Exo 2
 
       h3 liste de techno
       p(v-for="(nom, i) in noms") {{ i+1 }} - {{ nom }}
@@ -31,6 +36,9 @@ html(lang="fr")
       input(type="checkbox" v-model='success')
       label(for="")  {{ success }}
       p comme si c'était un v-if
+
+
+      h3 Exo 3
 
       .ui.message(:class="cls")
         i.icon.close(@click='close')

@@ -4,26 +4,29 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="../index.css"/>
     <title>Découverte</title>
   </head>
   <body>
     <div class="ui inverted fixed menu">
       <div class="header item">Decouverte</div>
     </div>
-    <div class="ui main container" id="app"><a :href="link + '/cv.html'" target="_blank" :title="message">{{ message }}</a>
+    <div class="ui main container" id="app">
+      <h3>Exo 1</h3><a :href="link + '/cv.html'" target="_blank" :title="message">{{ message }}</a>
       <p>(v-if) si 'success' est true la div est afficher sinon l'élément est supprimé (v-if="success") || (v-else="!success")</p>
       <p>(v-show) si 'success' est true la div est afficher sinon l'élément est est display:none</p>
       <!--ou on envoyer un objet {success: success, error: !success}-->
       <div class="ui message" :class="success ? 'success' : 'error' " :style="style()"><i class="icon close" @click="close"></i>
         <p>ou un objet :class="{success: success, error: !success}"</p>
       </div>
+      <h3>Exo 2</h3>
       <h3>liste de techno</h3>
       <p v-for="(nom, i) in noms">{{ i+1 }} - {{ nom }}</p>
       <input type="text" v-model="message"/><br/><br/>
       <input type="checkbox" v-model="success"/>
       <label for=""> {{ success }}</label>
       <p>comme si c'était un v-if</p>
+      <h3>Exo 3</h3>
       <div class="ui message" :class="cls"><i class="icon close" @click="close"></i>
         <p>Hello</p>
       </div>
