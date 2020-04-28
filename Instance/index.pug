@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css")
+    link(rel="stylesheet", href="../index.css")
+    title Instance
+  body
+    .ui.inverted.fixed.menu
+      .header.item Instance
+    
+    .ui.main.container#app
+
+      h3 Exo 1 
+      p  {{ technos }}
+      button(@click="addTechno") Add technos
+      p impossibe de modiier un valeur dans tableau dans une instance
+
+ 
+      h3 Exo 2 (timeur)
+
+      span {{ second }}
+
+
+      h3 Exo 3 (compteur)
+
+      span(@click="compteur") {{ count +1 }} {{ count === 1 ? 'time' :'times' }}
+
+
+
+
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    script(src="index.js")

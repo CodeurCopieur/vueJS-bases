@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" href="../index.css"/>
+    <title>Instance</title>
+  </head>
+  <body>
+    <div class="ui inverted fixed menu">
+      <div class="header item">Instance</div>
+    </div>
+    <div class="ui main container" id="app">
+      <h3>Exo 1 </h3>
+      <p> {{ technos }}</p>
+      <button @click="addTechno">Add technos</button>
+      <p>impossibe de modiier un valeur dans tableau dans une instance</p>
+      <h3>Exo 2 (timeur)</h3><span>{{ second }}</span>
+      <h3>Exo 3 (compteur)</h3><span @click="compteur">{{ count +1 }} {{ count === 1 ? 'time' :'times' }}</span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
