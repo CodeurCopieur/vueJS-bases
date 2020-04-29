@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" href="../index.css"/>
+    <title>Propriétés combinées & Watchers </title>
+  </head>
+  <body>
+    <div class="ui inverted fixed menu">
+      <div class="header item">Propriétés combinées & Watchers </div>
+    </div>
+    <div class="ui main container" id="app">
+      <h3>Exo 1</h3><span>{{ message }}</span>
+      <input type="text" name="" v-model="message"/>
+      <input type="checkbox" name="" v-model="success"/>
+      <div class="ui message" :class="cls">salut tout le monde</div>
+      <h3>Exo 2</h3><span>{{ firstname }} </span><br/><span>{{ lastname }} </span><br/><span>{{ fullname }}</span><br/>
+      <input type="text" name="" v-model="fullname"/><br/>
+      <input type="text" name="" v-model="autres"/>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

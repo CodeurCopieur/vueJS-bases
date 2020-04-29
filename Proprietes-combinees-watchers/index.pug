@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css")
+    link(rel="stylesheet", href="../index.css")
+    title Propriétés combinées & Watchers 
+  body
+    .ui.inverted.fixed.menu
+      .header.item Propriétés combinées & Watchers 
+    
+    .ui.main.container#app
+
+      h3 Exo 1
+      span {{ message }}
+      input(type="text", name="", v-model='message') 
+
+      input(type="checkbox", name="", v-model='success')
+      .ui.message(:class="cls") salut tout le monde
+      
+      h3 Exo 2
+
+      span {{ firstname }} 
+      br
+      span {{ lastname }} 
+      br
+      span {{ fullname }}
+      br
+      input(type="text", name="", v-model='fullname') 
+
+      br
+
+      input(type="text", name="", v-model="autres")
+      
+    
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    script(src="index.js")
