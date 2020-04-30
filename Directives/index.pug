@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css")
+    link(rel="stylesheet", href="../index.css")
+    title Les directives
+  body
+    .ui.inverted.fixed.menu
+      .header.item Les directives
+    
+    .ui.main.container#app
+
+      h3 Modifieur
+      a(:href="link" @click.prevent='demo') Website
+      p .prevent => .preventDefault()
+      p .stop => .stopPropagation()
+
+      input(type="text" @keyup="demo" v-model.lazy="login") 
+      label(for="") {{ login }}
+      p @keyup (appuie sur une touche ) de plus .space
+      p .lazy
+      input(type="text" v-model.number="number") 
+      p .number (saisir des nombres sur le champ) {{ number }}
+      input(type="text" v-model.trim="name") 
+      p .trim (enleve les espaces) {{ name }}
+
+      h3 Creer une directives (local, global)
+      input(type="text" v-test="login" v-model="login") 
+      p element : input
+      p binding.value : c'est la valeur dans v-test="login" (Codwerk)
+      p update  : detecter les modifications
+  
+
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    script(src="index.js")

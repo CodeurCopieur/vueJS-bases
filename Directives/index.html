@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" href="../index.css"/>
+    <title>Les directives</title>
+  </head>
+  <body>
+    <div class="ui inverted fixed menu">
+      <div class="header item">Les directives</div>
+    </div>
+    <div class="ui main container" id="app">
+      <h3>Modifieur</h3><a :href="link" @click.prevent="demo">Website</a>
+      <p>.prevent => .preventDefault()</p>
+      <p>.stop => .stopPropagation()</p>
+      <input type="text" @keyup="demo" v-model.lazy="login"/>
+      <label for="">{{ login }}</label>
+      <p>@keyup (appuie sur une touche ) de plus .space</p>
+      <p>.lazy</p>
+      <input type="text" v-model.number="number"/>
+      <p>.number (saisir des nombres sur le champ) {{ number }}</p>
+      <input type="text" v-model.trim="name"/>
+      <p>.trim (enleve les espaces) {{ name }}</p>
+      <h3>Creer une directives (local, global)</h3>
+      <input type="text" v-test="login" v-model="login"/>
+      <p>element : input</p>
+      <p>binding.value : c'est la valeur dans v-test="login" (Codwerk)</p>
+      <p>update  : detecter les modifications</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
