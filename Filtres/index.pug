@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css")
+    link(rel="stylesheet", href="../index.css")
+    title Les Filtres
+  body
+    .ui.inverted.fixed.menu
+      .header.item Les Filtres
+    
+    .ui.main.container#app
+
+      h3 Exo 1 : Filtre Global
+      p {{ message | Majuscule }}
+      p {{ message | reverse }}
+
+      h3 Exo 1 : Filtre Local
+      p {{ poste | autre('Dev', 'End')}}
+    
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    script(src="index.js")

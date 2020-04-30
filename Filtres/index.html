@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" href="../index.css"/>
+    <title>Les Filtres</title>
+  </head>
+  <body>
+    <div class="ui inverted fixed menu">
+      <div class="header item">Les Filtres</div>
+    </div>
+    <div class="ui main container" id="app">
+      <h3>Exo 1 : Filtre Global</h3>
+      <p>{{ message | Majuscule }}</p>
+      <p>{{ message | reverse }}</p>
+      <h3>Exo 1 : Filtre Local</h3>
+      <p>{{ poste | autre('Dev', 'End')}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
