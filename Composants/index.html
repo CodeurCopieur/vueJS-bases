@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" href="../index.css"/>
+    <title>Les Composants</title>
+  </head>
+  <body>
+    <div class="ui inverted fixed menu">
+      <div class="header item">Les Composants </div>
+    </div>
+    <div class="ui main container" id="app">
+      <h3>Composant global</h3>
+      <message class="ui message" :message="message" type="success"></message>
+      <h3>Composant local</h3>
+      <local class="ui message" :local="local" type="error"></local>
+      <h3>Counter</h3>
+      <counter></counter>
+      <counter :start="3"></counter>
+      <h3>Communation entre parents et enfants</h3>
+      <communation class="ui message" :message="message" type="success" header="test" v-if="alert" @close="hideAlerte"></communation>
+      <button @click="showAlerte">Click</button>
+      <h3>Transfere vers le parent (Formulaire)</h3>
+      <formuser v-model="user">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem eaque impedit, eum porro reprehenderit, consequatur ipsam assumenda, voluptates adipisci asperiores esse cumque facere? Libero, quis quae voluptatem nemo inventore mollitia.</formuser>
+      <pre>{{ user }}</pre>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
