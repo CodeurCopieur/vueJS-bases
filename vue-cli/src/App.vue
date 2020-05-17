@@ -3,6 +3,9 @@
     img(src="./assets/logo.png", alt="logo vue")
     h1 {{ msg }}
     Counter
+    Counter
+    Counter
+    Counter
 
 </template>
 
